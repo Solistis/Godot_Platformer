@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://yr3wkl45777u"]
+
+[ext_resource type="Texture2D" uid="uid://cfwqqluk3dsdk" path="res://assets/background/_Complete_static_BG_(288 x 208).png" id="1_llemg"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(3, -3)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(2.99653, 3)
+texture = ExtResource("1_llemg")
+centered = false
+flip_h = true

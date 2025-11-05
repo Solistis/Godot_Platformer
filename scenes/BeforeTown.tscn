@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bohb0o4bjwhsx"]
+[gd_scene load_steps=33 format=4 uid="uid://bohb0o4bjwhsx"]
 
 [ext_resource type="PackedScene" uid="uid://yr3wkl45777u" path="res://scenes/parallax_background.tscn" id="1_14xng"]
 [ext_resource type="PackedScene" uid="uid://n5hruekn4fjs" path="res://scenes/Mc.tscn" id="1_qs544"]
@@ -12,12 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://dbk3eaj0stmm6" path="res://assets/sprites/worldbuilding/Blocks (16 x 16).png" id="8_7ar1y"]
 [ext_resource type="FontFile" uid="uid://b6x0acci2v745" path="res://assets/fonts/PixelOperator8.ttf" id="8_y4ki3"]
 [ext_resource type="PackedScene" uid="uid://4u1vaxoad1my" path="res://scenes/coin.tscn" id="12_ssjgk"]
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="13_myjpg"]
+[ext_resource type="Script" uid="uid://i5ml0x6rjnfk" path="res://scripts/game_manager.gd" id="13_myjpg"]
 [ext_resource type="PackedScene" uid="uid://bvnduuvn3xdbs" path="res://scenes/NS_Rock.tscn" id="14_wfmk4"]
 [ext_resource type="PackedScene" uid="uid://dk15aqidst4au" path="res://scenes/Town.tscn" id="15_dhe5x"]
 [ext_resource type="Texture2D" uid="uid://cfcs5whievg5x" path="res://assets/sprites/heart.png" id="16_6s77n"]
+[ext_resource type="Script" uid="uid://cyoqofu4trlq" path="res://scenes/ui.gd" id="17_sm77u"]
 [ext_resource type="PackedScene" uid="uid://f362hq1t3ujh" path="res://scenes/mushy.tscn" id="17_yef5y"]
-[ext_resource type="Script" path="res://scripts/pause.gd" id="18_lp4ju"]
+[ext_resource type="Script" uid="uid://b8fungtrfyhwp" path="res://scripts/pause.gd" id="18_lp4ju"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wykix"]
 distance = -669.396
@@ -500,6 +501,7 @@ collision_mask = 2
 target_level = ExtResource("15_dhe5x")
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("17_sm77u")
 
 [node name="CoinCounter" type="Panel" parent="UI"]
 anchors_preset = 1

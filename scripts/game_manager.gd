@@ -1,10 +1,17 @@
 extends Node
 
-@onready var coins_label: Label = %CoinsLabel
+var coins: int = 0
+var coins_label: Label = null  # will be registered by the scene that has it
 
-var coins = 0
+func register_label(label: Label) -> void:
+	coins_label = label
+	_update_label()
 
-func add_coins():
-	coins += 1
+func add_coins(amount: int = 1) -> void:
+	coins += amount
+	_update_label()
 	print(coins)
-	coins_label.text = "Coins: " + str(coins)
+
+func _update_label() -> void:
+	if coins_label:
+		coins_label.text = "Coins: " + str(coins)

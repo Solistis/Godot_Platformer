@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://cj21ug453ki8f"]
 
-[ext_resource type="Script" path="res://scripts/evil_radish.gd" id="1_4slrc"]
+[ext_resource type="Script" uid="uid://casfgxxacq18" path="res://scripts/evil_radish.gd" id="1_4slrc"]
 [ext_resource type="Texture2D" uid="uid://q688blk6nd61" path="res://assets/sprites/Knight_player_1.4/Radish/Idle 1 (30x38).png" id="1_s304j"]
 [ext_resource type="Texture2D" uid="uid://j0hbx0cd3ri5" path="res://assets/sprites/Knight_player_1.4/Radish/Run (30x38).png" id="3_tcmdj"]
 [ext_resource type="Texture2D" uid="uid://dihdsbg4pmloc" path="res://assets/sprites/Knight_player_1.4/Radish/Hit (30x38).png" id="4_3v1m1"]

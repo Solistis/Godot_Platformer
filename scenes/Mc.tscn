@@ -354,7 +354,7 @@ script = ExtResource("1_h7h3g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(88, -31)
 sprite_frames = SubResource("SpriteFrames_khpll")
-animation = &"walking"
+animation = &"attack"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -372,6 +372,8 @@ shape = SubResource("RectangleShape2D_ohc3n")
 disabled = true
 
 [node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

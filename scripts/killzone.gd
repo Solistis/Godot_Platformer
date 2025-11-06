@@ -7,7 +7,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	print("You Died!")
 	Engine.time_scale = 0.5
-	GameManager.coins = 0
+	GameManager.reset_to_level_start()
 	GameManager._update_label() 
 	timer.start()
 

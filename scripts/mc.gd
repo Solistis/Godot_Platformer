@@ -15,7 +15,12 @@ var is_dashing = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $hitbox  # Ensure this is an Area2D node
+@onready var footstep_player = $FootstepPlayer  # AudioStreamPlayer2D node
 
+func play_footstep():
+	if not footstep_player.playing:
+		footstep_player.play()
+		
 func jump():
 	velocity.y = JUMP_VELOCITY
 
@@ -86,3 +91,29 @@ func update_animation():
 
 func _on_resume_pressed() -> void:
 	pass # Replace with function body.
+
+var footsteps = [
+	preload("res://assets/sounds/footsteps/footstep1.wav"),
+	preload("res://assets/sounds/footsteps/footstep2.wav"),
+	preload("res://assets/sounds/footsteps/footstep3.wav"),
+	preload("res://assets/sounds/footsteps/footstep4.wav"),
+	preload("res://assets/sounds/footsteps/footstep5.wav"),	
+]
+
+var step_frames := [1, 4]        # pick 2 frames in the 0..5 cycle
+var rng := RandomNumberGenerator.new()
+
+func _ready() -> void:
+	rng.randomize()
+	# Make sure FootstepPlayer stream DOES NOT loop in the Inspector.
+
+func _play_random_step() -> void:
+	# small pitch variance keeps it from sounding repetitive
+	footstep_player.pitch_scale = rng.randf_range(0.95, 1.05)
+	footstep_player.stream = footsteps[rng.randi_range(0, footsteps.size() - 1)]
+	footstep_player.play()
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	if animated_sprite.animation == "walking" and is_on_floor() and abs(velocity.x) > 0.1:
+		if step_frames.has(animated_sprite.frame):
+			_play_random_step()

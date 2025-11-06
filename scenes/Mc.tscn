@@ -371,4 +371,7 @@ position = Vector2(89, -29)
 shape = SubResource("RectangleShape2D_ohc3n")
 disabled = true
 
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

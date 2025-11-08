@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://bvnduuvn3xdbs" path="res://scenes/NS_Rock.tscn" id="14_5ruec"]
 [ext_resource type="PackedScene" uid="uid://bx1rpqy5d8s4o" path="res://scenes/Main_Menu.tscn" id="15_ht2ff"]
 [ext_resource type="PackedScene" uid="uid://f362hq1t3ujh" path="res://scenes/mushy.tscn" id="15_mgxl1"]
-[ext_resource type="Script" uid="uid://cyoqofu4trlq" path="res://scenes/ui.gd" id="16_83qr6"]
 [ext_resource type="PackedScene" uid="uid://cj21ug453ki8f" path="res://scenes/evil_radish.tscn" id="16_dibxw"]
 [ext_resource type="PackedScene" uid="uid://4u1vaxoad1my" path="res://scenes/coin.tscn" id="18_g21ho"]
+[ext_resource type="PackedScene" uid="uid://dy0ldyod1ceut" path="res://scenes/UI.tscn" id="19_83qr6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wykix"]
 distance = -669.396
@@ -4243,32 +4243,6 @@ position = Vector2(2585.27, 559.26)
 collision_mask = 2
 target_level = ExtResource("15_ht2ff")
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("16_83qr6")
-
-[node name="Panel" type="Panel" parent="UI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -139.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = 46.0
-grow_horizontal = 0
-
-[node name="CoinsLabel" type="Label" parent="UI/Panel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "Coins: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Area2D2" parent="." instance=ExtResource("14_5ruec")]
 position = Vector2(-121.28, 559.069)
 
@@ -4405,3 +4379,7 @@ offset_bottom = 546.067
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "End Of Demo"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Ui" parent="Node2D" instance=ExtResource("19_83qr6")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bohb0o4bjwhsx"]
+[gd_scene load_steps=30 format=4 uid="uid://bohb0o4bjwhsx"]
 
 [ext_resource type="PackedScene" uid="uid://yr3wkl45777u" path="res://scenes/parallax_background.tscn" id="1_14xng"]
 [ext_resource type="PackedScene" uid="uid://n5hruekn4fjs" path="res://scenes/Mc.tscn" id="1_qs544"]
@@ -15,10 +15,8 @@
 [ext_resource type="Script" uid="uid://i5ml0x6rjnfk" path="res://scripts/game_manager.gd" id="13_myjpg"]
 [ext_resource type="PackedScene" uid="uid://bvnduuvn3xdbs" path="res://scenes/NS_Rock.tscn" id="14_wfmk4"]
 [ext_resource type="PackedScene" uid="uid://dk15aqidst4au" path="res://scenes/Town.tscn" id="15_dhe5x"]
-[ext_resource type="Texture2D" uid="uid://cfcs5whievg5x" path="res://assets/sprites/heart.png" id="16_6s77n"]
-[ext_resource type="Script" uid="uid://cyoqofu4trlq" path="res://scenes/ui.gd" id="17_sm77u"]
+[ext_resource type="PackedScene" uid="uid://dy0ldyod1ceut" path="res://scenes/UI.tscn" id="17_xsy06"]
 [ext_resource type="PackedScene" uid="uid://f362hq1t3ujh" path="res://scenes/mushy.tscn" id="17_yef5y"]
-[ext_resource type="Script" uid="uid://b8fungtrfyhwp" path="res://scripts/pause.gd" id="18_lp4ju"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wykix"]
 distance = -669.396
@@ -290,8 +288,6 @@ texture = ExtResource("4_oadt5")
 sources/0 = SubResource("TileSetAtlasSource_22671")
 sources/1 = SubResource("TileSetAtlasSource_nn5nh")
 
-[sub_resource type="Theme" id="Theme_lrrb3"]
-
 [node name="BeforeTown" type="Node2D"]
 position = Vector2(1.49829, 2.99661)
 
@@ -500,120 +496,9 @@ position = Vector2(2585.27, 559.26)
 collision_mask = 2
 target_level = ExtResource("15_dhe5x")
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("17_sm77u")
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="CoinCounter" type="Panel" parent="UI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -139.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = 46.0
-grow_horizontal = 0
-
-[node name="CoinsLabel" type="Label" parent="UI/CoinCounter"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "Coins: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Health" type="Panel" parent="UI"]
-offset_left = 17.3529
-offset_top = 10.6787
-offset_right = 182.353
-offset_bottom = 62.6787
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Health"]
-layout_mode = 0
-offset_right = 165.0
-offset_bottom = 49.0
-
-[node name="hearts1" type="TextureRect" parent="UI/Health/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_6s77n")
-expand_mode = 2
-
-[node name="hearts2" type="TextureRect" parent="UI/Health/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_6s77n")
-expand_mode = 2
-
-[node name="hearts3" type="TextureRect" parent="UI/Health/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("16_6s77n")
-expand_mode = 2
-
-[node name="Pause" type="Node" parent="UI"]
-script = ExtResource("18_lp4ju")
-
-[node name="PausePanel" type="Panel" parent="UI/Pause"]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="UI/Pause/PausePanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.5
-offset_top = -107.187
-offset_right = 89.5
-offset_bottom = -24.1867
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 48
-text = "Pause"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/PausePanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -114.021
-offset_top = -2.0
-offset_right = 124.979
-offset_bottom = 86.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-alignment = 1
-
-[node name="Resume" type="Button" parent="UI/Pause/PausePanel/VBoxContainer"]
-process_mode = 3
-layout_mode = 2
-theme = SubResource("Theme_lrrb3")
-theme_override_font_sizes/font_size = 24
-text = "Resume"
-
-[node name="menu" type="Button" parent="UI/Pause/PausePanel/VBoxContainer"]
-process_mode = 3
-layout_mode = 2
-theme = SubResource("Theme_lrrb3")
-theme_override_font_sizes/font_size = 24
-text = "Main Menu
-"
+[node name="Ui" parent="Node2D" instance=ExtResource("17_xsy06")]
 
 [connection signal="area_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
-[connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
-[connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/menu" to="UI/Pause" method="_on_menu_pressed"]

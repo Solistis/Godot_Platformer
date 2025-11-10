@@ -1,0 +1,127 @@
+[gd_scene load_steps=5 format=3 uid="uid://dy0ldyod1ceut"]
+
+[ext_resource type="Script" uid="uid://cyoqofu4trlq" path="res://scenes/ui.gd" id="1_5en4g"]
+[ext_resource type="Texture2D" uid="uid://cfcs5whievg5x" path="res://assets/sprites/heart.png" id="2_ua6yw"]
+[ext_resource type="Script" uid="uid://b8fungtrfyhwp" path="res://scripts/pause.gd" id="3_75u2n"]
+
+[sub_resource type="Theme" id="Theme_3wlde"]
+
+[node name="Ui" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_5en4g")
+
+[node name="CoinCounter" type="Panel" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 46.0
+grow_horizontal = 0
+
+[node name="CoinsLabel" type="Label" parent="UI/CoinCounter"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Coins: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="Panel" parent="UI"]
+unique_name_in_owner = true
+offset_left = 17.3529
+offset_top = 10.6787
+offset_right = 182.353
+offset_bottom = 62.6787
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Health"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 165.0
+offset_bottom = 49.0
+
+[node name="hearts1" type="TextureRect" parent="UI/Health/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ua6yw")
+expand_mode = 2
+
+[node name="hearts2" type="TextureRect" parent="UI/Health/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ua6yw")
+expand_mode = 2
+
+[node name="hearts3" type="TextureRect" parent="UI/Health/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_ua6yw")
+expand_mode = 2
+
+[node name="Pause" type="Node" parent="UI"]
+script = ExtResource("3_75u2n")
+
+[node name="PausePanel" type="Panel" parent="UI/Pause"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UI/Pause/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -107.187
+offset_right = 89.5
+offset_bottom = -24.1867
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/PausePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.021
+offset_top = -2.0
+offset_right = 124.979
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Resume" type="Button" parent="UI/Pause/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = SubResource("Theme_3wlde")
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
+[node name="menu" type="Button" parent="UI/Pause/PausePanel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme = SubResource("Theme_3wlde")
+theme_override_font_sizes/font_size = 24
+text = "Main Menu
+"
+
+[connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/menu" to="UI/Pause" method="_on_menu_pressed"]

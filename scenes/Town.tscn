@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bvnduuvn3xdbs" path="res://scenes/NS_Rock.tscn" id="14_by5cv"]
 [ext_resource type="PackedScene" uid="uid://173si5u2ykwv" path="res://scenes/BossLeadUp.tscn" id="15_vx7qx"]
 [ext_resource type="PackedScene" uid="uid://4u1vaxoad1my" path="res://scenes/coin.tscn" id="17_4thos"]
-[ext_resource type="Script" uid="uid://cyoqofu4trlq" path="res://scenes/ui.gd" id="17_wtftv"]
+[ext_resource type="PackedScene" uid="uid://dy0ldyod1ceut" path="res://scenes/UI.tscn" id="18_wtftv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wykix"]
 distance = -669.396
@@ -4279,32 +4279,6 @@ position = Vector2(2585.27, 559.26)
 collision_mask = 2
 target_level = ExtResource("15_vx7qx")
 
-[node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("17_wtftv")
-
-[node name="Coins" type="Panel" parent="UI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -139.0
-offset_top = 6.0
-offset_right = -6.0
-offset_bottom = 46.0
-grow_horizontal = 0
-
-[node name="CoinsLabel" type="Label" parent="UI/Coins"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
-text = "Coins: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Area2D2" parent="." instance=ExtResource("14_by5cv")]
 position = Vector2(-121.28, 559.069)
 
@@ -4349,3 +4323,7 @@ position = Vector2(2020.75, 565.799)
 
 [node name="Coin13" parent="Coins" instance=ExtResource("17_4thos")]
 position = Vector2(1779.81, 398.277)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Ui" parent="Node2D" instance=ExtResource("18_wtftv")]

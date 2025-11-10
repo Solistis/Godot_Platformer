@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=3 uid="uid://n5hruekn4fjs"]
 
-[ext_resource type="Script" uid="uid://c8ylpvm3j8l8f" path="res://scripts/mc.gd" id="1_h7h3g"]
+[ext_resource type="Script" path="res://scripts/mc.gd" id="1_h7h3g"]
 [ext_resource type="Texture2D" uid="uid://nd0x4wxvi6yy" path="res://assets/sprites/Knight_player_1.4/Knight_player/Attack_KG_2.png" id="2_5o81u"]
 [ext_resource type="Texture2D" uid="uid://bj8kplv3l4jh4" path="res://assets/sprites/Knight_player_1.4/Knight_player/Idle_KG_1.png" id="2_qqdoa"]
 [ext_resource type="Texture2D" uid="uid://c76snnhvqbr1t" path="res://assets/sprites/Knight_player_1.4/Knight_player/Walking_KG_1.png" id="3_4ci3t"]

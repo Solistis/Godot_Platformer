@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy0ldyod1ceut"]
+[gd_scene load_steps=5 format=3 uid="uid://b1fqchcrvanmw"]
 
-[ext_resource type="Script" uid="uid://cyoqofu4trlq" path="res://scenes/ui.gd" id="1_5en4g"]
+[ext_resource type="Script" path="res://scenes/ui.gd" id="1_5en4g"]
 [ext_resource type="Texture2D" uid="uid://cfcs5whievg5x" path="res://assets/sprites/heart.png" id="2_ua6yw"]
-[ext_resource type="Script" uid="uid://b8fungtrfyhwp" path="res://scripts/pause.gd" id="3_75u2n"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="3_75u2n"]
 
 [sub_resource type="Theme" id="Theme_3wlde"]
 

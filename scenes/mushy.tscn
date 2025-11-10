@@ -1,7 +1,7 @@
 [gd_scene load_steps=43 format=3 uid="uid://f362hq1t3ujh"]
 
 [ext_resource type="Texture2D" uid="uid://br8yru2ddbgwe" path="res://assets/sprites/enemies/Mushroom/Idle (32x32).png" id="1_dtl8e"]
-[ext_resource type="Script" uid="uid://cli8keuq5uiv0" path="res://scenes/mushy.gd" id="1_y531u"]
+[ext_resource type="Script" path="res://scenes/mushy.gd" id="1_y531u"]
 [ext_resource type="Texture2D" uid="uid://bn30qtdyts323" path="res://assets/sprites/enemies/Mushroom/Hit.png" id="2_1cx54"]
 [ext_resource type="Texture2D" uid="uid://ce2wpt6ittsp7" path="res://assets/sprites/enemies/Mushroom/Run (32x32).png" id="3_jersq"]
 

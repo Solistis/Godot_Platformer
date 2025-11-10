@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://chmxvh1s017ii" path="res://assets/sprites/Generic Children NPCs.png" id="10_10nog"]
 [ext_resource type="Texture2D" uid="uid://cfjog6wt2ck35" path="res://assets/sprites/Generic Female NPCs.png" id="11_fgyws"]
 [ext_resource type="Texture2D" uid="uid://cd1nb1qsbygci" path="res://assets/sprites/Generic Male NPCs.png" id="12_vnlgk"]
-[ext_resource type="Script" uid="uid://i5ml0x6rjnfk" path="res://scripts/game_manager.gd" id="12_ybfw6"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="12_ybfw6"]
 [ext_resource type="FontFile" uid="uid://b6x0acci2v745" path="res://assets/fonts/PixelOperator8.ttf" id="13_vgn5h"]
 [ext_resource type="PackedScene" uid="uid://bvnduuvn3xdbs" path="res://scenes/NS_Rock.tscn" id="14_by5cv"]
 [ext_resource type="PackedScene" uid="uid://173si5u2ykwv" path="res://scenes/BossLeadUp.tscn" id="15_vx7qx"]
 [ext_resource type="PackedScene" uid="uid://4u1vaxoad1my" path="res://scenes/coin.tscn" id="17_4thos"]
-[ext_resource type="PackedScene" uid="uid://dy0ldyod1ceut" path="res://scenes/UI.tscn" id="18_wtftv"]
+[ext_resource type="PackedScene" uid="uid://b1fqchcrvanmw" path="res://scenes/UI.tscn" id="18_wtftv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wykix"]
 distance = -669.396

@@ -272,10 +272,10 @@ animations = [{
 size = Vector2(26, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukmkj"]
-size = Vector2(18.4304, 1.93463)
+size = Vector2(26, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rslln"]
-size = Vector2(39, 21)
+size = Vector2(28.5, 20)
 
 [node name="Mushy" type="RigidBody2D"]
 collision_mask = 2
@@ -288,7 +288,6 @@ animation = &"Idle"
 autoplay = "Idle"
 
 [node name="BodyBlock" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(27, 22)
 shape = SubResource("RectangleShape2D_oo22o")
 
@@ -297,13 +296,15 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="HitBox" type="CollisionShape2D" parent="KillMushy"]
-position = Vector2(27, 10)
+position = Vector2(27, 10.75)
 shape = SubResource("RectangleShape2D_ukmkj")
 
 [node name="DamageHitbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="HitBox" type="CollisionShape2D" parent="DamageHitbox"]
-position = Vector2(26.5, 21.5)
+position = Vector2(26.75, 23)
 shape = SubResource("RectangleShape2D_rslln")
 
 [connection signal="body_entered" from="KillMushy" to="." method="_on_kill_mushy_body_entered"]

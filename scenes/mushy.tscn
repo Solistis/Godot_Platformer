@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://f362hq1t3ujh"]
+[gd_scene load_steps=44 format=3 uid="uid://f362hq1t3ujh"]
 
 [ext_resource type="Texture2D" uid="uid://br8yru2ddbgwe" path="res://assets/sprites/enemies/Mushroom/Idle (32x32).png" id="1_dtl8e"]
 [ext_resource type="Script" uid="uid://cli8keuq5uiv0" path="res://scenes/mushy.gd" id="1_y531u"]
@@ -269,10 +269,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo22o"]
-size = Vector2(25.6195, 20.1815)
+size = Vector2(26, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukmkj"]
-size = Vector2(27.7217, 21.2326)
+size = Vector2(26, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rslln"]
+size = Vector2(28.5, 20)
 
 [node name="Mushy" type="RigidBody2D"]
 collision_mask = 2
@@ -284,16 +287,25 @@ sprite_frames = SubResource("SpriteFrames_x17ta")
 animation = &"Idle"
 autoplay = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(27.6162, 21.9829)
+[node name="BodyBlock" type="CollisionShape2D" parent="."]
+position = Vector2(27, 22)
 shape = SubResource("RectangleShape2D_oo22o")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="KillMushy" type="Area2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(27.6162, 21.8778)
+[node name="HitBox" type="CollisionShape2D" parent="KillMushy"]
+position = Vector2(27, 10.75)
 shape = SubResource("RectangleShape2D_ukmkj")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="DamageHitbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageHitbox"]
+position = Vector2(26.75, 23)
+shape = SubResource("RectangleShape2D_rslln")
+
+[connection signal="body_entered" from="KillMushy" to="." method="_on_kill_mushy_body_entered"]
+[connection signal="body_entered" from="DamageHitbox" to="." method="_on_damage_hitbox_body_entered"]

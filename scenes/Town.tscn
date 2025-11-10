@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://dk15aqidst4au"]
+[gd_scene load_steps=39 format=4 uid="uid://dk15aqidst4au"]
 
 [ext_resource type="PackedScene" uid="uid://yr3wkl45777u" path="res://scenes/parallax_background.tscn" id="1_nimwt"]
 [ext_resource type="PackedScene" uid="uid://n5hruekn4fjs" path="res://scenes/Mc.tscn" id="2_k2gri"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qtgn1qgxt7t" path="res://assets/sprites/worldbuilding/Snack_machine_Bench_Trash_bin (16 x 16).png" id="7_ollet"]
 [ext_resource type="Texture2D" uid="uid://dbk3eaj0stmm6" path="res://assets/sprites/worldbuilding/Blocks (16 x 16).png" id="8_eho7n"]
 [ext_resource type="Texture2D" uid="uid://bp66yuri44rpk" path="res://assets/background/Terrain (16 x 16).png" id="9_la7lu"]
+[ext_resource type="Texture2D" uid="uid://263ho716dxbc" path="res://assets/background/2 - Autumn Forest/Terrain (16 x 16).png" id="10_1qtcw"]
 [ext_resource type="Texture2D" uid="uid://chmxvh1s017ii" path="res://assets/sprites/Generic Children NPCs.png" id="10_10nog"]
 [ext_resource type="Texture2D" uid="uid://cfjog6wt2ck35" path="res://assets/sprites/Generic Female NPCs.png" id="11_fgyws"]
 [ext_resource type="Texture2D" uid="uid://cd1nb1qsbygci" path="res://assets/sprites/Generic Male NPCs.png" id="12_vnlgk"]
@@ -270,11 +271,52 @@ texture = ExtResource("7_ollet")
 5:2/0 = 0
 6:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv6y3"]
+texture = ExtResource("10_1qtcw")
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+11:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_o5fje"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_iwh8d")
 sources/1 = SubResource("TileSetAtlasSource_gdi3l")
 sources/2 = SubResource("TileSetAtlasSource_pw108")
+sources/3 = SubResource("TileSetAtlasSource_cv6y3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22671"]
 texture = ExtResource("4_vhvlu")

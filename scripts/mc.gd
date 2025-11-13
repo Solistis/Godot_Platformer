@@ -16,6 +16,10 @@ var is_dashing = false
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hitbox: Area2D = $hitbox  # Ensure this is an Area2D node
 
+# *************************** Hurt Sound FX *********************** #
+@onready var hurt_player = $HurtPlayer
+# ***************************************************************** #
+
 		
 func jump():
 	velocity.y = JUMP_VELOCITY
@@ -26,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	# ---- KNOCKBACK MODE ----
 	if is_knocked:
 		# optional: add some horizontal damping while sliding back
+		hurt_player.play()
 		velocity.x = move_toward(velocity.x, 0.0, 1200.0 * delta)
 		knock_time_left -= delta
 		if knock_time_left <= 0.0:

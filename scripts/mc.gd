@@ -23,6 +23,18 @@ func jump():
 # ----------------------------------- movements ----------------------- #
 func _physics_process(delta: float) -> void:
 	
+	# ---- KNOCKBACK MODE ----
+	if is_knocked:
+		# optional: add some horizontal damping while sliding back
+		velocity.x = move_toward(velocity.x, 0.0, 1200.0 * delta)
+		knock_time_left -= delta
+		if knock_time_left <= 0.0:
+			is_knocked = false
+		move_and_slide()
+		update_animation()
+		return
+	# ------------------------
+	
 	# Handle Dashing
 	if is_dashing:
 		move_and_slide()
@@ -138,4 +150,26 @@ func _play_jump() -> void:
 	jump_player.pitch_scale = rng.randf_range(0.96, 1.04)
 	jump_player.stream = jump_sounds[0] # or randomize if you add more
 	jump_player.play()
+# ************************************************************************** #
+
+# ***************************** Knock back effect ********************* #
+
+const KNOCKBACK_X := 600.0   # push harder left/right
+const KNOCK_DURATION := 0.40 # seconds
+
+var is_knocked := false
+var knock_time_left := 0.0
+
+func apply_knockback(from_pos: Vector2, duration: float = KNOCK_DURATION) -> void:
+	if is_knocked:
+		return
+	is_knocked = true
+	knock_time_left = duration
+
+	var dir: int = sign(global_position.x - from_pos.x)  # push away from hitter
+	if dir == 0: dir = 1
+
+	velocity.x = dir * KNOCKBACK_X
+	# no vertical pop: leave velocity.y as-is
+	
 # ************************************************************************** #

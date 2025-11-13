@@ -79,6 +79,10 @@ func _physics_process(delta: float) -> void:
 func start_dash():
 	is_dashing = true
 	can_dash = false
+	
+	SoundManager.play_dash()
+	
+	
 	velocity.x = DASH_SPEED * (1 if not animated_sprite.flip_h else -1)
 	animated_sprite.play("dash")  # Ensure you have a "dash" animation
 	await(get_tree().create_timer(DASH_DURATION).timeout)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dagh6mfxc02gl"]
+
+[ext_resource type="AudioStream" uid="uid://brwy21gmsrbtd" path="res://assets/sounds/mc/girl-scream.wav" id="1_2ko6b"]
+[ext_resource type="Script" uid="uid://djlam6odmm7mn" path="res://scenes/sound_manager.gd" id="1_p1llj"]
+[ext_resource type="AudioStream" uid="uid://kxem1xiia40q" path="res://assets/sounds/coin/ESM_Casino_Game_Coin_v2_Sound_FX_Arcade_Kids_Mobile_App.wav" id="3_7h8s6"]
+[ext_resource type="AudioStream" uid="uid://dxl1af2w087on" path="res://assets/sounds/mc/hurt.wav" id="4_rs7eg"]
+[ext_resource type="AudioStream" uid="uid://voxv4jat656u" path="res://assets/sounds/mushy/mushy-death.wav" id="5_yai5u"]
+
+[node name="SoundManager" type="Node2D"]
+script = ExtResource("1_p1llj")
+
+[node name="GirlScreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_2ko6b")
+
+[node name="CoinPickUpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7h8s6")
+volume_db = -7.893
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="HurtPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rs7eg")
+
+[node name="MushyDeathPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yai5u")

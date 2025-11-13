@@ -7,7 +7,6 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "CharacterBody2D":
 		$AnimatedSprite2D.visible = false # Hide the coin
-		pick_up_player.play()
-		await pick_up_player.finished
+		SoundManager.play_coin_pickup()
 		queue_free() # Delete the coin
 		GameManager.add_coins()

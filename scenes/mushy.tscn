@@ -1,10 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://f362hq1t3ujh"]
+[gd_scene load_steps=44 format=3 uid="uid://f362hq1t3ujh"]
 
 [ext_resource type="Texture2D" uid="uid://br8yru2ddbgwe" path="res://assets/sprites/enemies/Mushroom/Idle (32x32).png" id="1_dtl8e"]
 [ext_resource type="Script" uid="uid://cli8keuq5uiv0" path="res://scenes/mushy.gd" id="1_y531u"]
 [ext_resource type="Texture2D" uid="uid://bn30qtdyts323" path="res://assets/sprites/enemies/Mushroom/Hit.png" id="2_1cx54"]
 [ext_resource type="Texture2D" uid="uid://ce2wpt6ittsp7" path="res://assets/sprites/enemies/Mushroom/Run (32x32).png" id="3_jersq"]
-[ext_resource type="AudioStream" uid="uid://voxv4jat656u" path="res://assets/sounds/mushy/mushy-death.wav" id="5_d6dy1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6e0h"]
 atlas = ExtResource("1_dtl8e")
@@ -307,9 +306,6 @@ collision_mask = 3
 [node name="HitBox" type="CollisionShape2D" parent="DamageHitbox"]
 position = Vector2(26.75, 23)
 shape = SubResource("RectangleShape2D_rslln")
-
-[node name="DeathSoundFx" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_d6dy1")
 
 [connection signal="body_entered" from="KillMushy" to="." method="_on_kill_mushy_body_entered"]
 [connection signal="body_entered" from="DamageHitbox" to="." method="_on_damage_hitbox_body_entered"]

@@ -7,8 +7,7 @@ extends RigidBody2D
 
 # When Mushy die
 func die():
-	death_sound_player.play()
-	await death_sound_player.finished
+	await SoundManager.play_mushy_death().finished
 	queue_free()
 
 # When player touch the top of the mushy

@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://n5hruekn4fjs"]
+[gd_scene load_steps=53 format=3 uid="uid://n5hruekn4fjs"]
 
 [ext_resource type="Script" uid="uid://c8ylpvm3j8l8f" path="res://scripts/mc.gd" id="1_h7h3g"]
 [ext_resource type="Texture2D" uid="uid://nd0x4wxvi6yy" path="res://assets/sprites/Knight_player_1.4/Knight_player/Attack_KG_2.png" id="2_5o81u"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bwyx6hd1227gm" path="res://assets/sprites/Knight_player_1.4/Knight_player/Dashing_KG_1.png" id="3_n2uri"]
 [ext_resource type="Texture2D" uid="uid://b7qaefic7u0uu" path="res://assets/sprites/Knight_player_1.4/Knight_player/Jump_KG_1.png" id="4_q7g84"]
 [ext_resource type="Texture2D" uid="uid://cgj1c507453ly" path="res://assets/sprites/Knight_player_1.4/Knight_player/Fall_KG_1.png" id="4_yayul"]
-[ext_resource type="AudioStream" uid="uid://dxl1af2w087on" path="res://assets/sounds/mc/hurt.wav" id="9_ni5lg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_luq3u"]
 atlas = ExtResource("2_qqdoa")
@@ -371,13 +370,6 @@ collision_mask = 2
 position = Vector2(89, -29)
 shape = SubResource("RectangleShape2D_ohc3n")
 disabled = true
-
-[node name="FootstepPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="JumpPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="HurtPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_ni5lg")
 
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

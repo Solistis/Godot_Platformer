@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://4u1vaxoad1my"]
+[gd_scene load_steps=11 format=3 uid="uid://4u1vaxoad1my"]
 
 [ext_resource type="Texture2D" uid="uid://p5vcgmnp2twc" path="res://assets/sprites/worldbuilding/MonedaD.png" id="1_i3ep8"]
 [ext_resource type="Script" uid="uid://bl8yaldaj0sy2" path="res://scenes/coin.gd" id="1_u70a7"]
+[ext_resource type="AudioStream" uid="uid://kxem1xiia40q" path="res://assets/sounds/coin/ESM_Casino_Game_Coin_v2_Sound_FX_Arcade_Kids_Mobile_App.wav" id="3_11l1o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vd4sk"]
 atlas = ExtResource("1_i3ep8")
@@ -62,5 +63,9 @@ frame_progress = 0.558958
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_155h0")
+
+[node name="PickUpPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_11l1o")
+volume_db = -7.893
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

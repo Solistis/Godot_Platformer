@@ -22,5 +22,4 @@ func on_level_entered() -> void:
 	level_start_coins = coins
 	
 func reset_to_level_start() -> void:
-	coins = level_start_coins
 	_update_label()

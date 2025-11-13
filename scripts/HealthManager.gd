@@ -6,6 +6,7 @@ var max_health := 3
 var current_health := max_health
 var hearts_node: Node = null
 
+
 func register_hearts(node: Node):
 	hearts_node = node
 	print("[HM] register_hearts -> ", hearts_node)
@@ -24,6 +25,7 @@ func update_health_ui():
 		# print("[HM] heart ", heart.name, " visible=", heart.visible)
 
 func lose_one_heart():
+	SoundManager.play_girl_scream()
 	if current_health > 0:
 		current_health -= 1
 	print("[HM] lose_one_heart -> current_health=", current_health)

@@ -13,6 +13,8 @@ func _ready() -> void:
 @onready var mc_hurt_player = $HurtPlayer
 @onready var mc_dash_player = $DashSoundPlayer
 @onready var mushy_death_player = $MushyDeathPlayer
+@onready var main_menu_player = $MainMenuPlayer
+
 
 
 
@@ -32,6 +34,12 @@ func play_mushy_death() -> AudioStreamPlayer:
 func play_dash() -> AudioStreamPlayer:
 	mc_dash_player.play()
 	return mc_dash_player
+	
+func play_main_menu_music() -> void:
+	main_menu_player.play()
+	
+func stop_main_menu_music() -> void:
+	main_menu_player.stop()
 	
 # ***************************** JUMPING SOUND FX ************************ #
 @onready var jump_player = $JumpPlayer  # AudioStreamPlayer2D node

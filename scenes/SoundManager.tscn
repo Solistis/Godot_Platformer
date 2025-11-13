@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dagh6mfxc02gl"]
+[gd_scene load_steps=8 format=3 uid="uid://dagh6mfxc02gl"]
 
 [ext_resource type="AudioStream" uid="uid://brwy21gmsrbtd" path="res://assets/sounds/mc/girl-scream.wav" id="1_2ko6b"]
 [ext_resource type="Script" uid="uid://djlam6odmm7mn" path="res://scenes/sound_manager.gd" id="1_p1llj"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dxl1af2w087on" path="res://assets/sounds/mc/hurt.wav" id="4_rs7eg"]
 [ext_resource type="AudioStream" uid="uid://voxv4jat656u" path="res://assets/sounds/mushy/mushy-death.wav" id="5_yai5u"]
 [ext_resource type="AudioStream" uid="uid://bvbuep74eqe8b" path="res://assets/sounds/mc/dash.mp3" id="6_4xaxn"]
+[ext_resource type="AudioStream" uid="uid://xl64108ca8qg" path="res://assets/sounds/menu/atmosphere-sound-effect-239969.mp3" id="7_kysrt"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_p1llj")
@@ -30,3 +31,6 @@ stream = ExtResource("5_yai5u")
 [node name="DashSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_4xaxn")
 volume_db = -8.53
+
+[node name="MainMenuPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kysrt")

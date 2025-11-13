@@ -5,6 +5,7 @@ extends RigidBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death_sound_player = $DeathSoundFx  # AudioStreamPlayer2D node
 
+# When Mushy die
 func die():
 	death_sound_player.play()
 	await death_sound_player.finished

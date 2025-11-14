@@ -4201,7 +4201,9 @@ position = Vector2(55.6712, 568.974)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(92.2378, -92.5084)
 zoom = Vector2(2, 2)
+limit_top = 0
 limit_bottom = 661
+editor_draw_drag_margin = true
 
 [node name="Killzone" parent="." instance=ExtResource("3_6of2n")]
 position = Vector2(-24.5407, 8.49481)

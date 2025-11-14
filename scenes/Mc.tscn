@@ -511,13 +511,12 @@ script = ExtResource("1_h7h3g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(88, -31)
 sprite_frames = SubResource("SpriteFrames_khpll")
-animation = &"dying1"
+animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.711768
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1
-position = Vector2(80, -30)
+position = Vector2(87, -30)
 shape = SubResource("CapsuleShape2D_4l04m")
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -525,7 +524,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(80, -30)
+position = Vector2(88, -30)
 shape = SubResource("RectangleShape2D_ohc3n")
 disabled = true
 

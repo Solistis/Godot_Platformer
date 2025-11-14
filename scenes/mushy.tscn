@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://f362hq1t3ujh"]
+[gd_scene load_steps=45 format=3 uid="uid://f362hq1t3ujh"]
 
 [ext_resource type="Texture2D" uid="uid://br8yru2ddbgwe" path="res://assets/sprites/enemies/Mushroom/Idle (32x32).png" id="1_dtl8e"]
 [ext_resource type="Script" path="res://scenes/mushy.gd" id="1_y531u"]
@@ -269,13 +269,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oo22o"]
-size = Vector2(26, 20)
+size = Vector2(16, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukmkj"]
-size = Vector2(26, 0.5)
+size = Vector2(25, 0.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rslln"]
-size = Vector2(28.5, 20)
+size = Vector2(28.25, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6dy1"]
+size = Vector2(26, 0.25)
 
 [node name="Mushy" type="RigidBody2D"]
 collision_mask = 2
@@ -289,7 +292,7 @@ autoplay = "Idle"
 frame_progress = 0.908647
 
 [node name="BodyBlock" type="CollisionShape2D" parent="."]
-position = Vector2(27, 22)
+position = Vector2(27, 23.5)
 shape = SubResource("RectangleShape2D_oo22o")
 
 [node name="KillMushy" type="Area2D" parent="."]
@@ -297,7 +300,9 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="HitBox" type="CollisionShape2D" parent="KillMushy"]
-position = Vector2(27, 10.75)
+light_mask = 3
+visibility_layer = 3
+position = Vector2(27.5, 9.875)
 shape = SubResource("RectangleShape2D_ukmkj")
 
 [node name="DamageHitbox" type="Area2D" parent="."]
@@ -305,8 +310,14 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="HitBox" type="CollisionShape2D" parent="DamageHitbox"]
-position = Vector2(26.75, 23)
+position = Vector2(26.875, 21.5)
 shape = SubResource("RectangleShape2D_rslln")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="HitBox" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(27, 11.875)
+shape = SubResource("RectangleShape2D_d6dy1")
 
 [connection signal="body_entered" from="KillMushy" to="." method="_on_kill_mushy_body_entered"]
 [connection signal="body_entered" from="DamageHitbox" to="." method="_on_damage_hitbox_body_entered"]

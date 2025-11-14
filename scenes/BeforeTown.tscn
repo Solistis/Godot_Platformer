@@ -288,7 +288,7 @@ texture = ExtResource("4_oadt5")
 sources/0 = SubResource("TileSetAtlasSource_22671")
 sources/1 = SubResource("TileSetAtlasSource_nn5nh")
 
-[node name="BeforeTown" type="Node2D"]
+[node name="BeforeTown2" type="Node2D"]
 position = Vector2(1.49829, 2.99661)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("1_14xng")]
@@ -299,7 +299,9 @@ position = Vector2(55.6712, 568.974)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(92.2378, -92.5084)
 zoom = Vector2(2, 2)
+limit_top = 0
 limit_bottom = 661
+limit_smoothed = true
 
 [node name="Killzone" parent="." instance=ExtResource("6_kwadb")]
 position = Vector2(-24.5407, 8.49481)

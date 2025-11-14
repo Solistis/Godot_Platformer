@@ -6,4 +6,4 @@ func _ready() -> void:
 	
 func _on_button_pressed() -> void:
 	SoundManager.stop_main_menu_music()
-	get_tree().change_scene_to_file("res://scenes/BossLeadUp.tscn")
+	get_tree().change_scene_to_file("res://scenes/BeforeTown.tscn")

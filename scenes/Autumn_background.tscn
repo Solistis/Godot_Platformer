@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ynl710ifi6yh"]
+
+[ext_resource type="Texture2D" uid="uid://cjyrlrn81peno" path="res://assets/background/2 - Autumn Forest/Background parts/_Complete_static_BG_(288 x 208).png" id="1_ng3nb"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(3, -3)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(2.99653, 3)
+texture = ExtResource("1_ng3nb")
+centered = false
+flip_h = true

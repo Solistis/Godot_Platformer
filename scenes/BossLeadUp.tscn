@@ -9,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b3qtgn1qgxt7t" path="res://assets/sprites/worldbuilding/Snack_machine_Bench_Trash_bin (16 x 16).png" id="7_dh0l0"]
 [ext_resource type="Texture2D" uid="uid://dbk3eaj0stmm6" path="res://assets/sprites/worldbuilding/Blocks (16 x 16).png" id="8_oev1k"]
 [ext_resource type="Texture2D" uid="uid://bp66yuri44rpk" path="res://assets/background/Terrain (16 x 16).png" id="9_g7n0i"]
-[ext_resource type="Texture2D" uid="uid://chmxvh1s017ii" path="res://assets/sprites/Generic Children NPCs.png" id="10_otdd5"]
-[ext_resource type="Texture2D" uid="uid://cfjog6wt2ck35" path="res://assets/sprites/Generic Female NPCs.png" id="11_7rn8m"]
-[ext_resource type="Texture2D" uid="uid://cd1nb1qsbygci" path="res://assets/sprites/Generic Male NPCs.png" id="12_yutjn"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="13_sb4dt"]
 [ext_resource type="PackedScene" uid="uid://bvnduuvn3xdbs" path="res://scenes/NS_Rock.tscn" id="14_5ruec"]
 [ext_resource type="PackedScene" uid="uid://bx1rpqy5d8s4o" path="res://scenes/Main_Menu.tscn" id="15_ht2ff"]
@@ -317,8 +314,11 @@ texture = ExtResource("5_fmq22")
 sources/0 = SubResource("TileSetAtlasSource_22671")
 sources/1 = SubResource("TileSetAtlasSource_nn5nh")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33io6"]
+load_path = "res://.godot/imported/Generic Children NPCs.png-dcd2bfcabc6a4b03ee261662e6e13a7c.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0lutj"]
-texture = ExtResource("10_otdd5")
+texture = SubResource("CompressedTexture2D_33io6")
 5:31/size_in_atlas = Vector2i(5, 7)
 5:31/0 = 0
 21:32/size_in_atlas = Vector2i(3, 5)
@@ -328,8 +328,11 @@ texture = ExtResource("10_otdd5")
 50:32/size_in_atlas = Vector2i(5, 5)
 50:32/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ruf8t"]
+load_path = "res://.godot/imported/Generic Female NPCs.png-9943fd1cddb704912e744a031c33e7ab.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_btgh2"]
-texture = ExtResource("11_7rn8m")
+texture = SubResource("CompressedTexture2D_ruf8t")
 46:0/0 = 0
 48:0/0 = 0
 51:0/0 = 0
@@ -2192,8 +2195,11 @@ texture = ExtResource("11_7rn8m")
 50:31/size_in_atlas = Vector2i(5, 7)
 50:31/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_elges"]
+load_path = "res://.godot/imported/Generic Male NPCs.png-11002a80a3798a189a4f7a3e9ee9c354.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uhi1i"]
-texture = ExtResource("12_yutjn")
+texture = SubResource("CompressedTexture2D_elges")
 use_texture_padding = false
 1:1/0 = 0
 2:1/0 = 0

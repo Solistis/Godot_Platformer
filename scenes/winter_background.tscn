@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqf4a5r24hiqj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i7oqv"]
+load_path = "res://.godot/imported/3 - Big_mountain_BG.png-a6205a11c10c742ec42bb9fa30fd1f27.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kuabr"]
+load_path = "res://.godot/imported/2 - Smaller_mountains.png-80deebedd8d21fc2f892650b85774367.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g1hpi"]
+load_path = "res://.godot/imported/1 - Snowy_foreground_area.png-b6980fab74f0dc9cc1d7550f26593dfb.ctex"
+
+[node name="WinterParallaxBackground" type="ParallaxBackground"]
+
+[node name="BigMountain" type="ParallaxLayer" parent="."]
+position = Vector2(6, -6)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BigMountain"]
+position = Vector2(-4, 6)
+scale = Vector2(2.99653, 3)
+texture = SubResource("CompressedTexture2D_i7oqv")
+centered = false
+flip_h = true
+
+[node name="mountain" type="ParallaxLayer" parent="."]
+position = Vector2(9, -9)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="mountain"]
+position = Vector2(-10, 6)
+scale = Vector2(2.99653, 3)
+texture = SubResource("CompressedTexture2D_kuabr")
+centered = false
+flip_h = true
+
+[node name="TreeBackground" type="ParallaxLayer" parent="."]
+position = Vector2(3, -3)
+motion_mirroring = Vector2(576, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeBackground"]
+position = Vector2(11, -9)
+scale = Vector2(2.99653, 3)
+texture = SubResource("CompressedTexture2D_g1hpi")
+centered = false
+flip_h = true
